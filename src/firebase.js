@@ -4,6 +4,8 @@ import 'firebase/compat/firestore';
 import "firebase/compat/database";
 import "firebase/compat/storage";
 
+require('dotenv').config();
+
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
   authDomain: "messaging-app-mern-fa99d.firebaseapp.com",

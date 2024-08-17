@@ -9,6 +9,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^14.5.2",
     "axios": "^1.7.4",
+    "dotenv": "^16.4.5",
     "firebase": "^10.13.0",
     "pusher-js": "^8.4.0-rc2",
     "react": "^17.0.2",
