@@ -5,7 +5,7 @@ import "firebase/compat/database";
 import "firebase/compat/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDpkGREVoHI8mvYcmUmkt3IdutEc81hMv0",
+  apiKey: process.env.API_KEY,
   authDomain: "messaging-app-mern-fa99d.firebaseapp.com",
   projectId: "messaging-app-mern-fa99d",
   storageBucket: "messaging-app-mern-fa99d.appspot.com",
