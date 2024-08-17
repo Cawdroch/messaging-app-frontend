@@ -13,7 +13,7 @@ const Sidebar = ({messages}) => {
   return (
     <div className="sidebar">
       <div className="sidebar__header">
-        <Avatar src={ user?.photoUrl } />
+        <Avatar src={ user?.photoURL } />
         <div className="sidebar__headerRight">
           <IconButton>
             <DonutLargeIcon />
