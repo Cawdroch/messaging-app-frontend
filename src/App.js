@@ -3,15 +3,24 @@ import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
 import React, { useEffect, useState } from "react";
 import Pusher from "pusher-js";
+import axios from "./components/axios";
+import Login from "./components/Login";
 
 Pusher.logToConsole = true;
 
 function App() {
   const [messages, setMessages] = useState([]);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const pusher = new Pusher("9b9a0160120f08368632b", { cluster: "eu" });
-    
+    axios.get("/messages/sync").then((res) => {
+      setMessages(res.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    const pusher = new Pusher("b9a0160120f08368632b", { cluster: "eu" });
+
     const channel = pusher.subscribe("messages");
     channel.bind("inserted", (data) => {
       setMessages([...messages, data]);
@@ -27,10 +36,14 @@ function App() {
 
   return (
     <div className="app">
-      <div className="app__body">
-        <Sidebar />
-        <Chat />
-      </div>
+      {!user ? (
+        <Login />
+      ) : (
+        <div className="app__body">
+          <Sidebar />
+          <Chat messages={messages} />
+        </div>
+      )}
     </div>
   );
 }

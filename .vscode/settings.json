@@ -1,0 +1,6 @@
+{
+    "stylelint.config": {
+
+        "ignoreFiles": ["**/*.js", "**/*.html", "**/*.json"]
+    }
+}
