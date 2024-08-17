@@ -6,12 +6,14 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { Avatar, IconButton, Input } from "@material-ui/core";
 import { SearchOutlined } from "@material-ui/icons";
 import SidebarChat from "./SidebarChat";
+import { useStateValue } from "./StateProvider";
 
-const Sidebar = () => {
+const Sidebar = ({messages}) => {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="sidebar">
       <div className="sidebar__header">
-        <Avatar src="https://madewithmany.org/wp-content/uploads/2021/01/Corby-Pole-Fair-avatar-400x400.png" />
+        <Avatar src={ user?.photoUrl } />
         <div className="sidebar__headerRight">
           <IconButton>
             <DonutLargeIcon />
@@ -31,9 +33,7 @@ const Sidebar = () => {
         </div>
       </div>
       <div className="sidebar__chats">
-        <SidebarChat />
-        <SidebarChat />
-        <SidebarChat />
+        <SidebarChat messages={messages} />
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import "firebase/compat/storage";
 require('dotenv').config();
 
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
+  apiKey: 'AIzaSyDpkGREVoHI8mvYcmUmkt3IdutEc81hMv0',
   authDomain: "messaging-app-mern-fa99d.firebaseapp.com",
   projectId: "messaging-app-mern-fa99d",
   storageBucket: "messaging-app-mern-fa99d.appspot.com",
