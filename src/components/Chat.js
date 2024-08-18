@@ -38,7 +38,7 @@ const Chat = ({ messages }) => {
           src={`https://api.dicebear.com/9.x/personas/svg?seed=${seed}`}
         />
         <div className="chat__headerInfo">
-          <h3>Dev Help</h3>
+          <h3>Jet Wanker Forum</h3>
           <p>Last seen at {" "}
           {messages[messages.length -1]?.timestamp}
           </p>
